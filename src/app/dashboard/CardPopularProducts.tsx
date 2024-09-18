@@ -17,15 +17,18 @@ const CardPopularProducts = () => {
                         Popular Products
                     </h3>
                     <hr />
+                    {/* ${Math.floor(Math.random() * 3)+1} */}
                     <div className='overflow-auto h-full'>
                         {
                             dashboardMetrics?.popularProducts.map((product) => (
                                 <div key={product.productId} className='flex items-center justify-between gap-3 px-5 py-7 border-b '>
                                     <div className='flex items-center gap-3'>
-                                        <div className=''>
-                                            Image
-                                            {/* <Image src={product} alt={product.name} className='w-16 h-16 object-cover rounded-lg' /> */}
-                                        </div>
+                                        <Image src={`https://s3-inventorymanagement-system.s3.ap-south-1.amazonaws.com/product${Math.floor(Math.random() * 3)+1}.png`}
+                                            alt="product"
+                                            width={48}
+                                            height={48}
+                                            className="rounded-lg w-14 h-14"
+                                        />
                                         <div className='flex flex-col justify-between gap-1'>
                                             <h4 className='font-bold text-gray-700'>{product.name}</h4>
                                             <p className='flex items-center text-sm'>
